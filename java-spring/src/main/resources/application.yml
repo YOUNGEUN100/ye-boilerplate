@@ -1,0 +1,53 @@
+server:
+  port: 7070
+# Tomcat initialized with port(s): 9090 (http)
+
+spring:
+  datasource:
+    url: jdbc:mariadb://localhost:3306/newdb       # mariadb
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: root
+    password: 1234
+  h2:
+    console:
+      path: /h2-console
+      enabled: true
+  jpa:
+    show-sql: true # java코드로 짠 sql을
+    defer-datasource-initialization: true # data.sql 사용을 위해서 필수적으로 등록
+    properties:
+      hibernate:
+        format_sql: true  # sql문 pretty하게 보여줌
+        use_sql_comments: true
+    generate-ddl: true   # true, false
+    hibernate:
+      ddl-auto: create
+  devtools:
+    livereload:
+      enabled: true
+  sql:
+    init:
+      mode: always
+      encoding: utf-8
+  security:
+#    oauth2:
+#      client:
+#        registration:
+#          google:
+#            client-id: 59576127208-sefe5j9bvgmhgqermmef88gjnmohlvs9.apps.googleusercontent.com
+#            client-secret: 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
+#            scope:
+#              - email
+#              - profile
+    user: # spring security 기본 아이디와 암호
+      name: user
+      password: 1234
+
+mybatis:
+  mapper-locations: mybatis-mapper/**/*.xml # mapper.xml
+  configuration:
+    map-underscore-to-camel-case: true # camel case
+  # xml에 있는 모델 앞의 패키지명을 생략 가능하도록 지원해주는 기능
+  type-aliases-package: me.youngeun.practice1.boilerplate1.model.mapper
+
+
