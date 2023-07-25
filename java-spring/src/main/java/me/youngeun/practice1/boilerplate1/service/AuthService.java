@@ -24,6 +24,10 @@ public class AuthService {
     private final AuthenticationManagerBuilder managerBuilder;
 
     public MemberResponseDto signup(MemberRequestDto requestDto) {
+
+        if(memberRepository.existsByEmail(requestDto.getEmail())) {
+            throw new RuntimeException("이미 가입되어 있는 유저입니다");
+        }
         Member member = requestDto.toMember(passwordEncoder);
         member = memberRepository.save(member);
         return MemberResponseDto.of(member);
