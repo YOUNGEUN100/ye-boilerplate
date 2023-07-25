@@ -30,24 +30,26 @@ spring:
       mode: always
       encoding: utf-8
   security:
-#    oauth2:
-#      client:
-#        registration:
-#          google:
-#            client-id: 59576127208-sefe5j9bvgmhgqermmef88gjnmohlvs9.apps.googleusercontent.com
-#            client-secret: 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
-#            scope:
-#              - email
-#              - profile
-    user: # spring security 기본 아이디와 암호
-      name: user
-      password: 1234
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 59576127208-sefe5j9bvgmhgqermmef88gjnmohlvs9.apps.googleusercontent.com
+            client-secret: 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
+            scope:
+              - email
+              - profile
+#    user: # spring security 기본 아이디와 암호
+#      name: user
+#      password: 1234
 
 mybatis:
   mapper-locations: mybatis-mapper/**/*.xml # mapper.xml
   configuration:
     map-underscore-to-camel-case: true # camel case
   # xml에 있는 모델 앞의 패키지명을 생략 가능하도록 지원해주는 기능
-  type-aliases-package: me.youngeun.practice1.boilerplate1.model.mapper
+  type-aliases-package: me.youngeun.practice1.boilerplate1.model
 
-
+jwt:
+#  issuer: ajufresh@gmail.com
+  secret: 1234 # 매우 중요한 키!!!!!

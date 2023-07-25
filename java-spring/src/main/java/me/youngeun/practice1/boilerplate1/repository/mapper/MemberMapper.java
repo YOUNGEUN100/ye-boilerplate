@@ -1,6 +1,6 @@
 package me.youngeun.practice1.boilerplate1.repository.mapper;
 
-import me.youngeun.practice1.boilerplate1.model.mapper.Member;
+import me.youngeun.practice1.boilerplate1.model.Member;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.HashMap;
