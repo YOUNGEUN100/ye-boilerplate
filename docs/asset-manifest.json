@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.130e3ac0.css",
-    "main.js": "/static/js/main.549993cd.js",
-    "static/js/787.5c39024c.chunk.js": "/static/js/787.5c39024c.chunk.js",
-    "index.html": "/index.html",
-    "main.130e3ac0.css.map": "/static/css/main.130e3ac0.css.map",
-    "main.549993cd.js.map": "/static/js/main.549993cd.js.map",
-    "787.5c39024c.chunk.js.map": "/static/js/787.5c39024c.chunk.js.map"
+    "main.css": "/ye-boilerplate/static/css/main.130e3ac0.css",
+    "main.js": "/ye-boilerplate/static/js/main.42d57f7f.js",
+    "static/js/787.5c39024c.chunk.js": "/ye-boilerplate/static/js/787.5c39024c.chunk.js",
+    "index.html": "/ye-boilerplate/index.html",
+    "main.130e3ac0.css.map": "/ye-boilerplate/static/css/main.130e3ac0.css.map",
+    "main.42d57f7f.js.map": "/ye-boilerplate/static/js/main.42d57f7f.js.map",
+    "787.5c39024c.chunk.js.map": "/ye-boilerplate/static/js/787.5c39024c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.130e3ac0.css",
-    "static/js/main.549993cd.js"
+    "static/js/main.42d57f7f.js"
   ]
 }
