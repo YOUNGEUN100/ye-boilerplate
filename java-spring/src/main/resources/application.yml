@@ -4,7 +4,7 @@
 
 spring:
   datasource:
-    url: jdbc:mariadb://thejoeun1.iptime.org:3310/mydb  # mariadb
+    url: jdbc:mariadb://ec2-13-125-221-149.ap-northeast-2.compute.amazonaws.com/mydb  # mariadb
     driver-class-name: org.mariadb.jdbc.Driver
     username: root
     password: 1234
