@@ -34,12 +34,24 @@ public class AuthService {
     }
 
     public JwtTokenDto login(MemberRequestDto requestDto) {
+//        UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken
+//                = requestDto.toAuthentication();
         UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken
-                = requestDto.toAuthentication();
+                = new UsernamePasswordAuthenticationToken(requestDto.getEmail(), requestDto.getPassword());
+        // 계정정보를 비교하기 전 시큐리티 사용자 정보(principal)를 세팅(loadUserByUsername 메소드 호출)하고
+        // 그 이후 UsernamePasswordAuthenticationToken을 사용하여 이메일과 패스워드가 같은지 비교
         Authentication authentication = managerBuilder.getObject().authenticate(usernamePasswordAuthenticationToken);
         JwtTokenDto jwtTokenDto = jwtTokenProvider.generateTokenDto(authentication);
 
+        Member member = memberRepository.findByEmail(requestDto.getEmail()).get();
+        member.setAccessToken(jwtTokenDto.getAccessToken());
+        member.setAccessTokenExpireIn(jwtTokenDto.getTokenExpiresIn());
+        memberRepository.save(member);
+
         return jwtTokenDto;
     }
+
+
+
 
 }
