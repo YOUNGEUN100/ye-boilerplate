@@ -7,14 +7,13 @@ import { BrowserRouter } from 'react-router-dom';
 import { CookiesProvider } from 'react-cookie';
 
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = Reac
 root.render(
   <CookiesProvider>
        <BrowserRouter basename={process.env.PUBLIC_URL}>
         <App />
       </BrowserRouter>
   </CookiesProvider>
- 
 );
 
 // If you want to start measuring performance in your app, pass a function
